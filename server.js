@@ -1,8 +1,5 @@
 var express = require('express');
 var app = express();
-var postsend = require('./api/postsend');
-var getsend = require('./api/getsend');
-var sqlsend = require('./api/introduce');
 var preinterview = require('./api/preinterview');
 
 var time = new Date();
@@ -15,8 +12,5 @@ app.get('/', (req, res) => {
     res.send('잘 나오고 있다던데?')
 });
 
-app.use('/postsend', postsend);
-app.use('/getsend', getsend);
-app.use('/introduce', sqlsend);
 app.use('/preinterview', preinterview);
 

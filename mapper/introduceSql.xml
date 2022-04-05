@@ -18,10 +18,59 @@
             ,   pf_imgheight
         from reactinterview.portfolio
     </select>
-     <select id="contact">
+     <select id="meeting">
         select 
             key_id
                 *
             from reactinterview.contact
     </select>
+    <insert id="meetingInsert">
+        insert into 
+            reactinterview.contact (
+                companyname
+                ,   position
+                ,   ability
+                ,   phonenumber
+                ,   othertext
+            )
+            values(
+                '#{wr_companyname}'
+                ,   '#{wr_position}'
+                ,   '#{wr_ability}'
+                ,   '#{wr_phoneenumber}'
+                ,   '#{wr_othertext}'
+            );
+    </insert>
+    <insert id="interviewInsert">
+        insert into 
+            reactinterview.interview (
+                wr_q
+                ,   wr_a
+            )
+            values(
+                '제목자리'
+                ,   '내용자리'
+            );
+    </insert>
+    <insert id="interviewInsertReview">
+        insert into 
+            reactinterview.review (
+                wr_q
+                , wr_a
+                <if test=" isimgSrc != '' && isimgSrc != null">
+                , imgSrc
+                , 'imgidentity'
+                </if>
+                , data
+            )
+            values(
+                '제목자리'
+                , '내용자리'
+                <if test=" isimgSrc != '' && isimgSrc != null">
+                , '#{isimgSrc}'
+                , '#{isimgidentity}'
+                </if>
+                , '개발코드'
+            );
+    </insert>
 </mapper>

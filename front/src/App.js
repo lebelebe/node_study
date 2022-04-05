@@ -1,16 +1,12 @@
 import './App.css';
-// import Getout from './component/Getout'
-// import Postout from './component/Postout'
-// import Sql from './component/Sql'
 import Interview from './component/Interview'
+import Interviewform from './component/interviewform';
 
 function App() {
   return (
     <div className="App">
-      {/* <Getout></Getout>
-      <Postout></Postout>
-      <Sql></Sql> */}
-      <Interview type='aws'></Interview>
+      <Interview type='interviewlist' titlenm="사전인터뷰"></Interview>
+      <Interviewform type='interviewwrite' titlenm='인터뷰글쓰기'></Interviewform>
     </div>
   );
 }
