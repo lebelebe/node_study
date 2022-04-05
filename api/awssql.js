@@ -19,7 +19,7 @@ router.post('/', (req, res, next) => {
     ); // sql문 추출해서 query에 담기
 
     pool.getConnection(function(err, connection){
-        if(err) console.log("DB접속불가 : " +err) //dbconfig에서 에러
+        if(err) console.log("DB접속불가: " +err+" config.js확인") //dbconfig에서 에러
         connection.query(
             query,
             (error, result) => {
